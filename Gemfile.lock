@@ -74,7 +74,10 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     bcrypt (3.1.18)
+    bootsnap (1.13.0)
+      msgpack (~> 1.2)
     builder (3.2.4)
+    byebug (11.1.3)
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.1.10)
@@ -114,6 +117,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
     minitest (5.16.3)
+    msgpack (1.6.0)
     net-imap (0.3.1)
       net-protocol
     net-pop (0.1.2)
@@ -170,6 +174,7 @@ GEM
     reline (0.3.1)
       io-console (~> 0.5)
     ruby2_keywords (0.0.5)
+    spring (4.1.0)
     thor (1.2.1)
     timeout (0.3.0)
     twilio-ruby (5.73.1)
@@ -192,6 +197,8 @@ DEPENDENCIES
   actionmailer (~> 7.0.4)
   active_model_serializers
   bcrypt (~> 3.1, >= 3.1.18)
+  bootsnap (>= 1.4.4)
+  byebug
   debug
   faker
   jsonapi-serializer (~> 2.2)
@@ -201,11 +208,12 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4)
+  spring
   twilio-ruby (~> 5.73.1)
   tzinfo-data
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 2.7.4p191
 
 BUNDLED WITH
-   2.3.22
+   2.3.25
