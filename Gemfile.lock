@@ -204,7 +204,7 @@ DEPENDENCIES
   jsonapi-serializer (~> 2.2)
   jwt
   letter_opener
-  pg
+  pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4)
