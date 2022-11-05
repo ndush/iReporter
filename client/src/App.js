@@ -24,7 +24,7 @@ function App() {
       }
     });
   }, []);
-  
+
   return (
     <div className="row mt-3">
       <Routes>
@@ -36,7 +36,10 @@ function App() {
             element={<InterventionsViewDetails />}
           />
         ) : (
-          <Route path="/interventions/:interventionId" element={<NotAuthorized />} />
+          <Route
+            path="/interventions/:interventionId"
+            element={<NotAuthorized />}
+          />
         )}
         {user?.is_admin ? (
           <Route
@@ -58,7 +61,6 @@ function App() {
                 setRedFlags={setRedFlags}
                 interventions={interventions}
                 setInterventions={setInterventions}
-               
               />
             }
           />
@@ -90,7 +92,7 @@ function App() {
         ) : (
           <Route path="/profile" element={<NotAuthorized />} />
         )}
-        <Route path="/*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
