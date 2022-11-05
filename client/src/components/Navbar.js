@@ -15,65 +15,73 @@ const Navbar = () => {
 
   const HandleLogout = () => {
     fetch("/logout", {
-      method: "DELETE"
-    })
-    .then((r) => { 
+      method: "DELETE",
+    }).then((r) => {
       if (r.ok) {
         setUser(null);
       } else {
-        r.json().then("There was an error in logging you out")
+        r.json().then("There was an error in logging you out");
       }
-    })
-  }
+    });
+  };
 
   return (
-    <nav className="fixed-top navbar navbar-expand-sm  navbar-expand-lg navbar-dark bg-light static-top" >
+    <nav className="fixed-top navbar navbar-expand-sm  navbar-expand-lg navbar-dark bg-light static-top">
       <div className="container-fluid">
-      <Link to={"/"} onClick={() => {window.location.href = "#home"}} className="navbar-brand" style={{ fontWeight: "bold",color: "#fa7670",padding:"2px" }} >
-      iREPO{/* <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/327/eyes_1f440.png" alt="..." height="36"/>*/}RTER
-      </Link>
+        <Link
+          to={"/"}
+          onClick={() => {
+            window.location.href = "#home";
+          }}
+          className="navbar-brand"
+          style={{ fontWeight: "bold", color: "#fa7670", padding: "2px" }}
+        >
+          iREPO
+          {/* <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/facebook/327/eyes_1f440.png" alt="..." height="36"/>*/}
+          RTER
+        </Link>
         <div
           class="collapse navbar-collapse justify-content-end"
           id="navbarSupportedContent"
-        > 
+        >
           <ul className="navbar-nav">
-          {user ? (  
-            <>
-          <li className="nav-item">
-              <Link
-                className="nav-link d-flex justify-content-center"
-                to="/profile"
-                //to signup
-                style={{ color: "#fa7670" }}
-              >
-                {user.name}'s Profile
-              </Link>
-            </li>
-            <li className="nav-item">
-            <Link
-              className="nav-link d-flex justify-content-center"
-              to="/user-landing"
-              //to signup
-              style={{ color: "#fa7670" }}
-            >
-             Raise an issue
-            </Link>
-          </li>
-          <li className="nav-item">
-          <Link
-            className="nav-link d-flex justify-content-center"
-            to="/"
-            onClick={HandleLogout}
-            //to signup
-            style={{ color: "#fa7670" }}
-          >
-            Logout
-          </Link>
-        </li>
-        </>
+            {user ? (
+              <>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link d-flex justify-content-center"
+                    to="/profile"
+                    //to signup
+                    style={{ color: "#fa7670" }}
+                  >
+                    {user.name}'s Profile
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link d-flex justify-content-center"
+                    to="/user-landing"
+                    //to signup
+                    style={{ color: "#fa7670" }}
+                  >
+                    Raise An Issue
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link d-flex justify-content-center"
+                    to="/"
+                    onClick={HandleLogout}
+                    //to signup
+                    style={{ color: "#fa7670" }}
+                  >
+                    Logout
+                  </Link>
+                </li>
+              </>
             ) : (
-            <>
-            {/* <li className="nav-item">
+              <>
+                {/* <li className="nav-item">
               <Link
                 className="nav-link d-flex justify-content-center"
                 to="/"
@@ -83,36 +91,40 @@ const Navbar = () => {
                 About Us
               </Link>
             </li> */}
-               <li className="nav-item">
-              <Link
-                className="nav-link d-flex justify-content-center"
-                onClick={() => {window.location.href = "#how-it-works"}}
-                style={{ color: "#fa7670" }}
-              >
-                How it works
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link d-flex justify-content-center"
-                onClick={() => {window.location.href = "#recent-reports"}}
-                style={{ color: "#fa7670" }}
-              >
-                Recent Reports
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link d-flex justify-content-center"
-                to="/get-started"
-                //to signup
-                style={{ color: "#fa7670" }}
-              >
-                Get started
-              </Link>
-            </li>
-          </>
-          )}
+                <li className="nav-item">
+                  <Link
+                    className="nav-link d-flex justify-content-center"
+                    onClick={() => {
+                      window.location.href = "#how-it-works";
+                    }}
+                    style={{ color: "#fa7670" }}
+                  >
+                    How It Works
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link d-flex justify-content-center"
+                    onClick={() => {
+                      window.location.href = "#recent-reports";
+                    }}
+                    style={{ color: "#fa7670" }}
+                  >
+                    Recent Reports
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link d-flex justify-content-center"
+                    to="/get-started"
+                    //to signup
+                    style={{ color: "#fa7670" }}
+                  >
+                    Get Started
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

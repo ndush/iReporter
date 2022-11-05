@@ -3,12 +3,12 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { MDBBtn } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import Map from "./Map";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import { BsPenFill } from "react-icons/bs"
-import { BsCameraReelsFill } from "react-icons/bs"
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import { BsPenFill } from "react-icons/bs";
+import { BsCameraReelsFill } from "react-icons/bs";
 import { GiInjustice } from "react-icons/gi";
 
 const AboutUs = () => {
@@ -65,7 +65,7 @@ const AboutUs = () => {
               </span>
             </h1>
             <p>
-              A Platform where you can report any form of corruption or
+              A platform where you can report any form of corruption or
               intervention incidences.
             </p>
           </div>
@@ -75,50 +75,80 @@ const AboutUs = () => {
         </section>
         <section>
           <h1
-          id="how-it-works"
+            id="how-it-works"
             style={{
               fontweight: "bold",
               textAlign: "center",
               color: "#fa7670",
               marginTop: "75px",
-              marginBottom: "75px"
+              marginBottom: "75px",
             }}
           >
-            How it works &nbsp; 
+            How It Works &nbsp;
           </h1>
-          <Container style={{ marginLeft: "100px"}}>
-           <Row>
-            <Col sm> <Card style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title style={{ textAlign: "center"}}><BsPenFill style={{ color: "#fa7670", marginBottom: "15px"}} size="2.85rem"/><h2 style={{ fontSize: "24px"}}>Sign up</h2></Card.Title>
-                <Card.Text style={{ fontSize: "16px", textAlign: "center"}}>
-                  Set up and iReporter account to access its features
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            </Col>
-            <Col sm>
-              <Card style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title style={{ textAlign: "center"}}><BsCameraReelsFill style={{ color: "#fa7670", marginBottom: "15px"}} size="2.85rem"/><h2 style={{ fontSize: "24px"}}>Record your report</h2></Card.Title>
-                <Card.Text style={{ fontSize: "16px", textAlign: "center"}}>
-                  Capture the incident in real time and upload it to the app.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            </Col>
-            <Col sm>
-            <Card style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title style={{ textAlign: "center"}}><GiInjustice style={{ color: "#fa7670", marginBottom: "15px"}} size="2.85rem"/><h2 style={{ fontSize: "24px"}}>Wait for the investigation</h2></Card.Title>
-                <Card.Text style={{ fontSize: "16px", textAlign: "center"}}>
-                 We'll update you with a notification once your report has been reviewed.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            </Col>
-          </Row>
-        </Container>
+          <Container style={{ marginLeft: "100px" }}>
+            <Row>
+              <Col sm>
+                {" "}
+                <Card style={{ width: "18rem" }}>
+                  <Card.Body>
+                    <Card.Title style={{ textAlign: "center" }}>
+                      <BsPenFill
+                        style={{ color: "#fa7670", marginBottom: "15px" }}
+                        size="2.85rem"
+                      />
+                      <h2 style={{ fontSize: "24px" }}>Sign up</h2>
+                    </Card.Title>
+                    <Card.Text
+                      style={{ fontSize: "16px", textAlign: "center" }}
+                    >
+                      Set up an iReporter account to access its features
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col sm>
+                <Card style={{ width: "18rem" }}>
+                  <Card.Body>
+                    <Card.Title style={{ textAlign: "center" }}>
+                      <BsCameraReelsFill
+                        style={{ color: "#fa7670", marginBottom: "15px" }}
+                        size="2.85rem"
+                      />
+                      <h2 style={{ fontSize: "24px" }}>Record your report</h2>
+                    </Card.Title>
+                    <Card.Text
+                      style={{ fontSize: "16px", textAlign: "center" }}
+                    >
+                      Capture the incident in real time and upload it to the
+                      app.
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col sm>
+                <Card style={{ width: "18rem" }}>
+                  <Card.Body>
+                    <Card.Title style={{ textAlign: "center" }}>
+                      <GiInjustice
+                        style={{ color: "#fa7670", marginBottom: "15px" }}
+                        size="2.85rem"
+                      />
+                      <h2 style={{ fontSize: "24px" }}>
+                        Wait for the investigation
+                      </h2>
+                    </Card.Title>
+                    <Card.Text
+                      style={{ fontSize: "16px", textAlign: "center" }}
+                    >
+                      We'll update you with a notification once your report has
+                      been reviewed.
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+          </Container>
         </section>
         <section className="about">
           <h1
@@ -126,7 +156,7 @@ const AboutUs = () => {
               fontweight: "bold",
               textAlign: "center",
               color: "#fa7670",
-              marginTop: "75px"
+              marginTop: "75px",
             }}
           >
             About Us &nbsp;
@@ -173,14 +203,22 @@ const AboutUs = () => {
                       {user ? (
                         <Link
                           to="/profile"
-                          style={{ fontweight: "bold", textDecoration: "none", color: "#fa7670" }}
+                          style={{
+                            fontweight: "bold",
+                            textDecoration: "none",
+                            color: "#fa7670",
+                          }}
                         >
                           ...Read more
                         </Link>
                       ) : (
                         <Link
                           to="/get-started"
-                          style={{ fontweight: "bold", textDecoration: "none", color: "#fa7670" }}
+                          style={{
+                            fontweight: "bold",
+                            textDecoration: "none",
+                            color: "#fa7670",
+                          }}
                         >
                           ...Read more
                         </Link>
@@ -203,13 +241,13 @@ const AboutUs = () => {
             </li>
           </ul>
           {user ? (
-            <Link to="/user-landing" style={{ marginLeft: "20px"}}>
+            <Link to="/user-landing" style={{ marginLeft: "20px" }}>
               <MDBBtn outline rounded className="mx-2" color="light">
                 Share Your Story
               </MDBBtn>
             </Link>
           ) : (
-            <Link to="/get-started" style={{ marginLeft: "20px"}}>
+            <Link to="/get-started" style={{ marginLeft: "20px" }}>
               <MDBBtn outline rounded className="mx-2" color="light">
                 Share Your Story
               </MDBBtn>
