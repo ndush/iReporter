@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import "../styles/LocationBar.css";
-import Spinner from 'react-bootstrap/Spinner';
+import Spinner from "react-bootstrap/Spinner";
 
 export default function UserLanding({ user }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [headline, setHeadline] = useState("");
   const [location, setLocation] = useState("");
@@ -58,17 +58,17 @@ export default function UserLanding({ user }) {
 
   function handleSubmitRedflag(e) {
     e.preventDefault();
-    setIsLoading(true)
-    const formData = new FormData()
-    formData.append("headline", headline)
-    formData.append("address", address)
-    formData.append("latitude", latitude)
-    formData.append("longitude", longitude)
-    formData.append("image", e.target.image.files[0])
-    formData.append("video", e.target.video.files[0])
-    formData.append("description", description)
-    formData.append("user_id", user.id)
-    formData.append("status", "Under Investigation")
+    setIsLoading(true);
+    const formData = new FormData();
+    formData.append("headline", headline);
+    formData.append("address", address);
+    formData.append("latitude", latitude);
+    formData.append("longitude", longitude);
+    formData.append("image", e.target.image.files[0]);
+    formData.append("video", e.target.video.files[0]);
+    formData.append("description", description);
+    formData.append("user_id", user.id);
+    formData.append("status", "Under Investigation");
 
     console.log(formData);
 
@@ -91,8 +91,8 @@ export default function UserLanding({ user }) {
       if (r.ok) {
         r.json().then((data) => console.log(data));
         setDisplayy("none");
-        setIsLoading(false)
-        navigate('/profile')
+        setIsLoading(false);
+        navigate("/profile");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -101,17 +101,17 @@ export default function UserLanding({ user }) {
 
   function handleSubmitIntervention(e) {
     e.preventDefault();
-    const formData = new FormData()
-    formData.append("headline", headline)
-    formData.append("address", address)
-    formData.append("latitude", latitude)
-    formData.append("longitude", longitude)
-    formData.append("address", address)
-    formData.append("image", e.target.image.files[0])
-    formData.append("video", e.target.video.files[0])
-    formData.append("description", description)
-    formData.append("user_id", user.id)
-    formData.append("status", "Under Investigation")
+    const formData = new FormData();
+    formData.append("headline", headline);
+    formData.append("address", address);
+    formData.append("latitude", latitude);
+    formData.append("longitude", longitude);
+    formData.append("address", address);
+    formData.append("image", e.target.image.files[0]);
+    formData.append("video", e.target.video.files[0]);
+    formData.append("description", description);
+    formData.append("user_id", user.id);
+    formData.append("status", "Under Investigation");
     console.log(formData);
 
     fetch("/interventions", {
@@ -123,7 +123,7 @@ export default function UserLanding({ user }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((data) => console.log(data));
-        navigate('/profile')
+        navigate("/profile");
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -136,13 +136,13 @@ export default function UserLanding({ user }) {
       <Navbar />
       <Logo>Welcome, {user?.name}!</Logo>
       <div style={{ marginTop: 20 }}>
-        <div class="row justify-content-center">
-          <div class="col-sm-5 mb-2">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">What is a Red-Flag Incident?</h5>
+        <div className="row justify-content-center">
+          <div className="col-sm-5 mb-2">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">What is a Red-Flag Incident?</h5>
                 <img
-                  class="card-img-top"
+                  className="card-img-top"
                   src="https://2456764.fs1.hubspotusercontent-na1.net/hub/2456764/hubfs/2102%20Blogs/red-flags-1200-627.jpg?width=680&name=red-flags-1200-627.jpg"
                   alt="Redflag"
                 />
@@ -150,9 +150,9 @@ export default function UserLanding({ user }) {
                   A red-flag is an incident linked to corruption and/or
                   corruption-related activities.
                 </h5>
-                <div class="text-center">
+                <div className="text-center">
                   <button
-                    class="btn btn-danger mt-3"
+                    className="btn btn-danger mt-3"
                     onClick={() => {
                       setCategoryBtn("redflag");
                       setDisplayy("block");
@@ -166,12 +166,14 @@ export default function UserLanding({ user }) {
             </div>
           </div>
 
-          <div class="col-sm-5 mb-2">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">What is an Intervention Incident?</h5>
+          <div className="col-sm-5 mb-2">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">
+                  What is an Intervention Incident?
+                </h5>
                 <img
-                  class="card-img-top"
+                  className="card-img-top"
                   src="https://thumbs.dreamstime.com/b/intervention-grungy-wooden-headline-maple-d-rendered-royalty-free-stock-image-can-be-used-online-website-86488320.jpg"
                   alt="Redflag"
                 />
@@ -179,9 +181,9 @@ export default function UserLanding({ user }) {
                   An intervention is a call for a government agency to intervene
                   e.g repairing bad roads.
                 </h5>
-                <div class="text-center">
+                <div className="text-center">
                   <button
-                    class="btn btn-danger mt-4"
+                    className="btn btn-danger mt-4"
                     onClick={() => {
                       setCategoryBtn("intervention");
                       setDisplayy("block");
@@ -197,9 +199,9 @@ export default function UserLanding({ user }) {
         </div>
       </div>
       <div style={{ display: displayy }}>
-        <div class="d-flex justify-content-center">
-          <div class="col-sm-10 ">
-            <div class="shadow p-3 mb-5 bg-white rounded">
+        <div className="d-flex justify-content-center">
+          <div className="col-sm-10 ">
+            <div className="shadow p-3 mb-5 bg-white rounded">
               <form
                 id="form"
                 onSubmit={(e) =>
@@ -208,7 +210,7 @@ export default function UserLanding({ user }) {
                     : handleSubmitIntervention(e)
                 }
               >
-                <div class=" text-center">
+                <div className=" text-center">
                   <h2>
                     {categoryBtn === "redflag"
                       ? "Post a Red-Flag Incident"
@@ -314,7 +316,7 @@ export default function UserLanding({ user }) {
                 </div>
 
                 <div>
-                <label htmlFor="Video" className="form-label">
+                  <label htmlFor="Video" className="form-label">
                     Video
                   </label>
                   <input
@@ -322,8 +324,8 @@ export default function UserLanding({ user }) {
                     className="form-control"
                     accept="video/*"
                     name={video}
-                    id ="video"
-                    placeholder ="Upload Video"
+                    id="video"
+                    placeholder="Upload Video"
                   />
                 </div>
                 <div>
@@ -338,18 +340,20 @@ export default function UserLanding({ user }) {
                     onChange={(e) => setDescription(e.target.value)}
                   />
                 </div>
-                <div class="text-center">
-                {isLoading ? (<Spinner animation="grow" variant="danger" />) : (
-                  <input
-                    class="btn btn-danger mt-3"
-                    type={"submit"}
-                    value={
-                      categoryBtn === "redflag"
-                        ? "Submit Red-Flag Incident"
-                        : "Submit Intervention Incident "
-                    }
-                  />
-                )}
+                <div className="text-center">
+                  {isLoading ? (
+                    <Spinner animation="grow" variant="danger" />
+                  ) : (
+                    <input
+                      className="btn btn-danger mt-3"
+                      type={"submit"}
+                      value={
+                        categoryBtn === "redflag"
+                          ? "Submit Red-Flag Incident"
+                          : "Submit Intervention Incident "
+                      }
+                    />
+                  )}
                 </div>
                 <div>
                   {errors.map((err) => (
