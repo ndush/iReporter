@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::API
+class ApplicationController < ActionController::Base
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
     include ActionController::Cookies 
     wrap_parameters format: []
