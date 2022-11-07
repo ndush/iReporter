@@ -13,5 +13,9 @@ class ApplicationController < ActionController::API
       return render json: { errors: ["Not Logged In"] }, 
       status: :unauthorized unless session.include? :user_id
     end
+
+    def fallback_index_html
+      render :file => 'public/index.html'      
+    end
     
 end
