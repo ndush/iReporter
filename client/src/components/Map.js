@@ -28,14 +28,14 @@ function Map() {
       .then((r) => r.json())
       .then((interventions) => setInterventions(interventions))
       .catch((err) => setErrors(err.errors));
-  }, []);
+  }, [interventions]);
 
   useEffect(() => {
     fetch("/redflags")
       .then((r) => r.json())
       .then((redFlags) => setRedFlags(redFlags))
       .catch((err) => setErrors(err.errors));
-  }, []);
+  }, [redFlags]);
 
   const interventionMarkers = interventions.map((intervention) => {
     const center = {
