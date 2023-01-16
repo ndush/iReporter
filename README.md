@@ -1,10 +1,15 @@
-# README
+# iReporter
 
-iReporter is an App that enables any citizen to bring any form of corruption to the notice of the appropriate authorities and the general public. Users can also report on things that needs government intervention.
+iReporter is a web app that enables any citizen to bring any form of corruption to the notice of the appropriate authorities and the general public. Users can also report on things that needs government intervention.
+
+## Live-link
+[iReporter Link](https://ireporter.onrender.com/)
   
-Project Demo: Project Demo
-Trello  Board  project tracker :https://trello.com/b/ifyokTqn/ireporter-development-workspace
-Required Features
+## Trello
+
+[Trello Board Project Tracker](https://trello.com/b/ifyokTqn/ireporter-development-workspace)
+
+## Required Features
     • Users can sign up
     • Users can log in
     • Users can create redflag or intervention report
@@ -18,32 +23,35 @@ Required Features
         ◦ Rejected
         ◦ Delete
 		
-Technologies
+## Technologies used
     • Ruby on Rails
     • React.js
-    • html5
-    • Bootstrap
+    • PostgresSQL
+    • Google Maps API
+    • Active Storage
+    • Twilio
+    • Action Mailer
       
-Installation
+## Installation
 
 To run: Install Ruby and git on your machine
 $ git clone https://github.com/iReporter-Dev-Team/iReporter.git
 $ cd iReporter
 
-For the frontend
+### Frontend
 $ npm install
 $ npm start
 
-For the backend run
+### Backend
 $ rails s
 
-Authors
-Gladys Wanjiku
-Ken Muyesu
-Kelvin Malongo
-Damaris Nduku
-Amos Sifuma
-Said Hussein
+## Authors
+	• Gladys Wanjiku
+	• Ken Muyesu
+	• Kelvin Malongo
+	• Damaris Nduku
+	• Amos Sifuma
+	• Said Hussein
 
 
 
